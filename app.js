@@ -73,7 +73,12 @@ upBtn.addEventListener("click", () => {
   let currentIdx = currentEl.innerText;
 
   if (currentIdx <= 1) return;
-  let nextIdx = Number(currentIdx) - 1;
 
-  currentEl.innerText = nextIdx;
+  let currentKeyword = document.getElementById(currentIdx);
+  currentKeyword.classList.remove("highlight");
+
+  let prevIdx = Number(currentIdx) - 1;
+  let prevKeword = document.getElementById(prevIdx);
+  prevKeword.classList.add("highlight");
+  currentEl.innerText = prevIdx;
 });
