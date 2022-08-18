@@ -23,6 +23,8 @@ document.addEventListener("keydown", (event) => {
 closeBtn.addEventListener("click", () => {
   searchContainer.classList.remove("show");
   searchContainer.classList.add("hide");
+
+  contentEl.innerText = textCopy;
 });
 
 searchInput.addEventListener("input", (e) => {
@@ -80,5 +82,12 @@ upBtn.addEventListener("click", () => {
   let prevIdx = Number(currentIdx) - 1;
   let prevKeword = document.getElementById(prevIdx);
   prevKeword.classList.add("highlight");
+
+  prevKeword.scrollIntoView({
+    behavior: "smooth",
+    block: "end",
+    inline: "nearest",
+  });
+
   currentEl.innerText = prevIdx;
 });
